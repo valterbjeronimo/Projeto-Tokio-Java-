@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="859.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetofinaljavajogo.HelloController">
+   <children>
+      <Button fx:id="SimularBtn" layoutX="253.0" layoutY="603.0" mnemonicParsing="false" onAction="#simularBatalha" onDragDetected="#simularBatalha" prefHeight="25.0" prefWidth="129.0" text="Luta " />
+      <Label layoutX="38.0" layoutY="117.0" prefHeight="17.0" prefWidth="42.0" text="Nome" />
+      <TextField fx:id="textNomeHeroi" layoutX="89.0" layoutY="113.0" />
+      <Label layoutX="46.0" layoutY="152.0" prefHeight="17.0" prefWidth="57.0" text="Tipo" />
+
+      <Label layoutX="46.0" layoutY="196.0" prefHeight="17.0" prefWidth="57.0" text="Vida" />
+      <TextField fx:id="textVidaHeroi" layoutX="89.0" layoutY="192.0" />
+      <Label layoutX="30.0" layoutY="235.0" prefHeight="17.0" prefWidth="57.0" text="Armadura" />
+      <TextField fx:id="textArmaduraHeroi" layoutX="89.0" layoutY="231.0" />
+
+      <SplitMenuButton layoutX="89.0" layoutY="148.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="${controller.selectedItemHeroi}">
+         <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleElfo" text="Elfo" />
+            <MenuItem mnemonicParsing="false" onAction="#handleHeroi" text="Heroi" />
+            <MenuItem mnemonicParsing="false" onAction="#handleHobbit" text="Hobbit" />
+         </items>
+      </SplitMenuButton>
+
+      <Label layoutX="345.0" layoutY="117.0" prefHeight="17.0" prefWidth="42.0" text="Nome" />
+      <Label layoutX="353.0" layoutY="152.0" prefHeight="17.0" prefWidth="57.0" text="Tipo" />
+      <Label layoutX="353.0" layoutY="196.0" prefHeight="17.0" prefWidth="57.0" text="Vida" />
+      <Label layoutX="337.0" layoutY="235.0" prefHeight="17.0" prefWidth="57.0" text="Armadura" />
+
+      <SplitMenuButton layoutX="396.0" layoutY="148.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="${controller.selectedItemBesta}">
+         <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleBesta" text="Besta" />
+            <MenuItem mnemonicParsing="false" onAction="#handleOrque" text="Orque" />
+         </items>
+      </SplitMenuButton>
+      <TextField fx:id="textVidaBesta" layoutX="396.0" layoutY="192.0" />
+      <TextField fx:id="textArmaduraBesta" layoutX="396.0" layoutY="231.0" />
+      <TextField fx:id="textNomeBesta" layoutX="396.0" layoutY="113.0" />
+      <Label layoutX="54.0" layoutY="77.0" prefHeight="17.0" prefWidth="42.0" text="Herois" />
+      <Label layoutX="389.0" layoutY="77.0" prefHeight="17.0" prefWidth="42.0" text="Bestas" />
+      <Button fx:id="SimularBtn1" layoutX="39.0" layoutY="546.0" mnemonicParsing="false" onAction="#selecionarAnteriorHeroi" prefHeight="25.0" prefWidth="73.0" text="Subir" />
+      <Button fx:id="SimularBtn11" layoutX="127.0" layoutY="546.0" mnemonicParsing="false" onAction="#selecionarProximoHeroi" prefHeight="25.0" prefWidth="73.0" text="Baixar" />
+      <Button fx:id="SimularBtn111" layoutX="213.0" layoutY="546.0" mnemonicParsing="false" onAction="#onSimularButtonClick" prefHeight="25.0" prefWidth="73.0" text="Deletar" />
+      <Button fx:id="SimularBtn1111" layoutX="337.0" layoutY="546.0" mnemonicParsing="false" onAction="#selecionarAnteriorBesta" prefHeight="25.0" prefWidth="73.0" text="subir" />
+      <Button fx:id="SimularBtn11111" layoutX="415.0" layoutY="546.0" mnemonicParsing="false" onAction="#selecionarProximo" prefHeight="25.0" prefWidth="73.0" text="baixar" />
+      <Button fx:id="SimularBtn111111" layoutX="499.0" layoutY="546.0" mnemonicParsing="false" onAction="#onSimularButtonClickBesta" prefHeight="25.0" prefWidth="73.0" text="Deletar" />
+      <Button fx:id="adicionarHeroiBnt" layoutX="112.0" layoutY="311.0" mnemonicParsing="false" onAction="#onHelloButtonClick" text="Adicionar Heroi " />
+      <Button fx:id="adicionarBestaBtn" layoutX="422.0" layoutY="311.0" mnemonicParsing="false" onAction="#onHelloButtonClickBesta" text="Adicionar Besta" />
+      <TextField fx:id="textAtaqueHeroi" layoutX="89.0" layoutY="271.0" />
+      <TextField fx:id="textAtaqueBesta" layoutX="396.0" layoutY="271.0" />
+      <Label layoutX="39.0" layoutY="275.0" prefHeight="17.0" prefWidth="57.0" text="Ataque" />
+      <Label layoutX="338.0" layoutY="275.0" prefHeight="17.0" prefWidth="57.0" text="Ataque" />
+      <TableView fx:id="tableviewHeroi" layoutX="20.0" layoutY="344.0" prefHeight="192.0" prefWidth="239.0">
+        <columns>
+          <TableColumn fx:id="colunaNomeHeroi" prefWidth="59.0" text="Nome" />
+            <TableColumn fx:id="colunaVidaHeroi" prefWidth="47.0" text="Vida" />
+            <TableColumn fx:id="colunaArmaduraHeroi" prefWidth="69.0" text="Armadura" />
+            <TableColumn fx:id="colunaAtaqueHeroi" prefWidth="61.0" text="Ataque" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableViewBesta" layoutX="337.0" layoutY="344.0" prefHeight="192.0" prefWidth="239.0">
+         <columns>
+            <TableColumn fx:id="colunaNomeBesta" prefWidth="59.0" text="Nome" />
+            <TableColumn fx:id="colunaVidaBesta" prefWidth="47.0" text="Vida" />
+            <TableColumn fx:id="colunaArmaduraBesta" prefWidth="69.0" text="Armadura" />
+            <TableColumn fx:id="colunaAtaqueBesta" prefWidth="61.0" text="Ataque" />
+         </columns>
+      </TableView>
+      <TextArea fx:id="consoleTextArea" layoutX="58.0" layoutY="645.0" onDragDetected="#initialize" prefHeight="200.0" prefWidth="488.0" />
+   </children>
+   <effect>
+      <Blend />
+   </effect>
+</Pane>
